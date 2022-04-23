@@ -3,13 +3,12 @@ import React from "react";
 import moment from "moment";
 import { v4 as uuid } from "uuid";
 
-import ExpenseItem from "./components/ExpenseItem";
-import Card from "./components/Card";
-
-import "./components/Expenses.css";
+import "./components/Expenses/Expenses.css";
+import Expenses from "./components/Expenses/Expenses";
+import NewExpense from "./components/NewExpense/NewExpense";
 
 const App = () => {
-  const expense = [
+  const expenses = [
     {
       id: uuid(),
       title: "Car Insurance",
@@ -40,11 +39,10 @@ const App = () => {
   ];
 
   return (
-    <Card className="expenses">
-      {expense.map((value) => {
-        return <ExpenseItem expenseItems={value} />;
-      })}
-    </Card>
+    <div>
+      <NewExpense />
+      <Expenses expense={expenses} />
+    </div>
   );
 };
 
