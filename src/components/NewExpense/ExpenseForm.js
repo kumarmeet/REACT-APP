@@ -29,7 +29,7 @@ const ExpenseForm = (props) => {
       id: uuid(),
       title: enteredTitle,
       amount: enteredAmount,
-      date: moment(enteredDate).format("DD MMMM YYYY"),
+      date: moment(enteredDate).format("YYYY MMMM D"),
     };
 
     props.onSaveExpenseData(expenseData);
