@@ -3,10 +3,25 @@ import ExpenseForm from "./ExpenseForm";
 
 import "./NewExpense.css";
 
-const NewExpense = () => {
+//custom prop onSaveExpenseDate child to parent
+
+const NewExpense = (props) => {
+  const saveExpenseDataHandler = (enteredExpenseData) => {
+    const expenseData = {
+      ...enteredExpenseData,
+    };
+
+    props.onAddExpense(expenseData);
+
+    console.log(
+      "Communication between child to parent components",
+      expenseData
+    );
+  };
+
   return (
     <div className="new-expense">
-      <ExpenseForm />
+      <ExpenseForm onSaveExpenseData={saveExpenseDataHandler} />
     </div>
   );
 };

@@ -1,10 +1,11 @@
 import React, { useState } from "react";
 
 import moment from "moment";
+import { v4 as uuid } from "uuid";
 
 import "./ExpenseForm.css";
 
-const ExpenseForm = () => {
+const ExpenseForm = (props) => {
   const [enteredTitle, setEnteredTitle] = useState("");
   const [enteredAmount, setEnteredAmount] = useState("");
   const [enteredDate, setEnteredDate] = useState("");
@@ -25,10 +26,13 @@ const ExpenseForm = () => {
     event.preventDefault();
 
     const expenseData = {
+      id: uuid(),
       title: enteredTitle,
       amount: enteredAmount,
       date: moment(enteredDate).format("DD MMMM YYYY"),
     };
+
+    props.onSaveExpenseData(expenseData);
 
     //two way binding first set the value and reset the value in the state variables
     setEnteredTitle("");
