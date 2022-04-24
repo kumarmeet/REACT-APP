@@ -28,7 +28,7 @@ const ExpenseForm = (props) => {
     const expenseData = {
       id: uuid(),
       title: enteredTitle,
-      amount: enteredAmount,
+      amount: +enteredAmount,
       date: moment(enteredDate).format("YYYY MMMM D"),
     };
 
