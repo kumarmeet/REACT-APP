@@ -1,10 +1,8 @@
-import React, { useState } from "react";
+import React from "react";
 
 import "./ExpensesFilter.css";
 
 const ExpensesFilter = (props) => {
-  const [] = useState("");
-
   const dropDownChangleHandler = (event) => {
     props.onChangeFilter(event.target.value);
   };
