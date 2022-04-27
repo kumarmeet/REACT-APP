@@ -1,3 +1,7 @@
+import React from "react";
+
+import "./Button.css";
+
 import styled from "styled-components";
 
 const Button = styled.button`
@@ -11,7 +15,7 @@ const Button = styled.button`
   cursor: pointer;
 
   @media (min-width: 768px) {
-    width: auto;
+    width: 180px;
   }
 
   &:focus {
